@@ -16,6 +16,20 @@
 - Implemented Sign Out
 - Update Profile
 - Fetch from TMBD Movies
+- BugFix: Sign up user displayName and profile picture update
+- BugFix: If the user is not logged in Redirect /browse to Login Pgae and vide-versa
+- Unsubscribed to the onAuthStateChanged callback
+- Added hardcoded string values to the constant file
+- Register for TMBD API & create an app & get access token
+- Get Data from TMDB now playing movies lsit API
+- Custom hook for nowPlaying movies
+- Create a movie slice
+- Update Store with movies data
+- Planning for Main Container & Secondary container
+- Fetch data for Trailer Video
+- Update the store with trailer video data
+- Embedded the youtube video & make it autoplay and mute
+- Tailwind classes to make main container look awesome
 
 # Features
 

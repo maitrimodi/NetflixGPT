@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import { useRef, useState } from 'react';
 import { checkValidData } from '../utils/validate';
@@ -10,10 +10,10 @@ import {
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { LOGIN_BG, USER_AVATAR } from '../utils/constants';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const email = useRef(null);
@@ -54,7 +54,7 @@ const Login = () => {
             const user = userCredential.user;
             updateProfile(user, {
               displayName: name.current.value,
-              photoURL: 'https://avatars.githubusercontent.com/u/38577874?v=4',
+              photoURL: USER_AVATAR,
             })
               .then(() => {
                 const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -66,7 +66,6 @@ const Login = () => {
                     photoURL: photoURL,
                   })
                 );
-                navigate('/browse');
               })
               .catch((error) => {
                 setErrorMessage(error.message);
@@ -88,7 +87,6 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate('/browse');
 
             // ...
           })
@@ -105,7 +103,7 @@ const Login = () => {
     <div>
       <Header />
       <img
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/ce462eb6-4d7f-4c9a-9f61-93cb535a64fd/web/US-en-20260105-TRIFECTA-perspective_036b5cbc-d76f-49ac-af5e-93bb0d612737_large.jpg"
+        src={LOGIN_BG}
         className="w-full fixed object-cover"
         alt="Login Background"
       />
