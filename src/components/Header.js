@@ -45,18 +45,16 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black px-8 flex justify-between">
-      <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="Logo" />
+    // <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className=" fixed top-0 left-0 w-full px-8 bg-gradient-to-b from-black z-50 flex justify-between">
+      <img className="w-44" src={LOGO} alt="Logo" />
       {user && (
-        <div className="flex p-2 justify-between">
+        <div className="flex p-2">
           <img
             alt="userIcon"
             src={user?.photoURL}
-            className="mr-5 w-10 h-10 cursor-pointer m-4"
+            className="w-12 h-12 mr-2 rounded-sm"
           />
-          {/* <p className="mt-7 mr-3 text-bold text-white underline">
-            {user?.displayName}
-          </p> */}
           <button className="text-white" onClick={handleSignOut}>
             Sign Out
           </button>
