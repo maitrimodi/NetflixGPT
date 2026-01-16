@@ -11,9 +11,22 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOTE0ZTRiNDZjZDI5MWFhNGI1NmFmYzBiN2ZhYWEyYSIsIm5iZiI6MTc2ODQyMDEwOS43MjIsInN1YiI6IjY5NjdmMzBkNDFkMGU3ZmNiOTlhODkyMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YzyO7uVhChbq3OY7thnwYxmtFINCnqhMs8bwhI6u0lo',
+    Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
 export const IMG_CDN_URL = 'https://image.tmdb.org/t/p/w500';
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: 'en', label: 'English' },
+  { identifier: 'fr', label: 'French' },
+  { identifier: 'hindi', label: 'Hindi' },
+  { identifier: 'esp', label: 'Spanish' },
+];
+
+export const DEFAULT_LANGUAGE = 'en';
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+
+export const GPT_ERR_MSG =
+  'Something went wrong. The AI did not return a valid response.';

@@ -7,20 +7,14 @@ const MainContainer = () => {
   if (movies === null) return null;
   const randomNumber = Math.floor(Math.random() * movies?.length);
   const mainMovie = movies[randomNumber];
-  console.log('main movie', mainMovie);
 
   const { title, overview, id } = mainMovie;
 
   return (
-    <div>
+    <div className=" pt-[30%] md:pt-0  bg-black">
       <VideoTitle title={title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>
-
-    // <div className="relative w-screen aspect-video">
-    //   <VideoBackground movieId={id} />
-    //   <VideoTitle title={title} overview={overview} />
-    // </div>
   );
 };
 

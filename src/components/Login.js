@@ -34,7 +34,7 @@ const Login = () => {
       msg = checkValidData(
         email.current.value,
         password.current.value,
-        name.current.value
+        name.current.value,
       );
     }
 
@@ -47,7 +47,7 @@ const Login = () => {
         createUserWithEmailAndPassword(
           auth,
           email.current.value,
-          password.current.value
+          password.current.value,
         )
           .then((userCredential) => {
             // Signed up
@@ -64,7 +64,7 @@ const Login = () => {
                     email: email,
                     displayName: displayName,
                     photoURL: photoURL,
-                  })
+                  }),
                 );
               })
               .catch((error) => {
@@ -82,7 +82,7 @@ const Login = () => {
         signInWithEmailAndPassword(
           auth,
           email.current.value,
-          password.current.value
+          password.current.value,
         )
           .then((userCredential) => {
             // Signed in
@@ -104,13 +104,13 @@ const Login = () => {
       <Header />
       <img
         src={LOGIN_BG}
-        className="w-full fixed object-cover"
+        className="w-full fixed object-cover h-screen"
         alt="Login Background"
       />
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="p-16 bg-black absolute w-[30%] my-36 mx-auto right-0 left-0 text-white justify-center align-center bg-opacity-80 items-center"
+        className="p-16 bg-black absolute w-11/12 md:w-[30%] my-36 mx-auto right-0 left-0 text-white justify-center align-center bg-opacity-80 items-center"
       >
         <h1 className="text-white text-3xl mb-10 font-bold">
           {isSignInForm ? 'Sign In' : 'Sign Up'}
@@ -155,14 +155,14 @@ const Login = () => {
           <input type="checkbox" className="scale-150" />
           <span className="ml-2"> Remember me</span>
         </label>
-        <p className="mt-5 text-md flex flex-row cursor-pointer">
+        <div className="mt-5 text-md flex flex-row cursor-pointer">
           <span className="text-gray-500 mr-2">
             {isSignInForm ? 'New to Netflix?' : 'Already have an account?'}
           </span>
           <p onClick={toggleSignInForm}>
             {isSignInForm ? 'Sign up now' : 'Sign in now'}
           </p>
-        </p>
+        </div>
         <p className="text-gray-500 mt-5 text-sm">
           This page is protected by Google reCAPTCHA to ensure you're not a bot.
         </p>
